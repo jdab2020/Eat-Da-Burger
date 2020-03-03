@@ -18,8 +18,10 @@ module.exports = function (app) {
     });
 
     app.post("/api/burgers", function (req, res) {
+        console.log(req.body)
         db.Burger.create({
-            burger_name: req.body.text
+            burger_name: req.body.burger_name,
+            devoured: req.body.devoured
         }).then(function (result) {
             res.render("index", result);
         }).catch(function (err) {
@@ -38,8 +40,8 @@ module.exports = function (app) {
     //   });
 
     // PUT route for updating todos. We can get the updated todo data from req.body
-    app.put("/api/burgers", function (req, res) {
-        db.Todo.update({
+    app.put("/api/burgers/:id", function (req, res) {
+        db.Burger.update({
             devoured: req.body.devoured
         }, {
             where: {
