@@ -5,7 +5,7 @@ $(document).ready(function () {
     
     devourBurger = () => {
         let id = $(this).data("id");
-        let newState = $(this).data("devour")
+        let newState = $(this).data("devoured")
 
         $.ajax("/api/burgers/" + id, {
             type: "PUT",
@@ -15,10 +15,13 @@ $(document).ready(function () {
 
     addBurger = () => {
         let id = $(this).data("id");
-        
+        let newBurger = {
+            burger_name: $("input").val().trim(),
+            devoured: $("[burger_name=devoured]:checked").val().trim()
+        }
         $.ajax({
             type: "POST",
-            data: 
+            data: newBurger
         }).then(()=>{location.reload();})
     }
 
