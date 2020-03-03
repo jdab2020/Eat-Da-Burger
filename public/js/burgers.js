@@ -16,7 +16,7 @@ $(document).ready(function () {
     addBurger = () => {
         let id = $(this).data("id");
         let newBurger = {
-            burger_name: $("input").val().trim(),
+            burger_name: $("textarea").val().trim(),
             devoured: $("[burger_name=devoured]:checked").val().trim()
         }
         $.ajax("/api/burgers", {

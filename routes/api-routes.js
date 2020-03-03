@@ -11,7 +11,7 @@ var db = require("../models");
 // Routes
 // =============================================================
 module.exports = function (app) {
-    app.get("/api/burgers", function (req, res) {
+    app.get("/", function (req, res) {
         db.Burger.findAll({}).then(function (result) {
             res.render("index", result);
         });

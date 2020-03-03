@@ -31,8 +31,6 @@ app.set("view engine", "handlebars");
 
 require("./routes/api-routes.js")(app);
 
-
-
 // Starting our Express app ====== if using sequelize
 // =============================================================
 // db.sequelize.sync().then(function () {
