@@ -1,6 +1,10 @@
-// Import MySQL connection.
-var connection = require("../config/connection.js");
+// *********************************************************************************
+// orm.js - This file offers a set of easier-to-use methods for interacting with the MySQL db.
+// *********************************************************************************
 
+// Dependencies
+// =============================================================
+var connection = require("./connection.js");
 
-
-module.exports = orm;
+// ORM
+// =============================================================
