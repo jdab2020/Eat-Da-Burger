@@ -6,24 +6,22 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-6">
+        <!--Burgers-->
+        <div class="col-5">
             <ul>
                 {{#each burgers}}
-                <li>
-                    <p><span class="label">ID:</span> {{this.id}}</p>
-                    <p><span class="label">Name:</span> {{this.id}}</p>
-                    <button data-id="{{this.id}}" class="devour">Devour!</button>
-                </li>
+                    {{#unless devoured}}
+                        {{> burgers/burger-block}}
                 {{/each}}
             </ul>
         </div>
-        <div class="col-6">
+        <div class="clearfix col-2"></div>
+        <!--Devoured-->
+        <div class="col-5">
             <ul>
-                {{#each devoured}}
-                <li>
-                    <p><span class="label">ID:</span> {{this.id}}</p>
-                    <p><span class="label">Name:</span> {{this.id}}</p>
-                </li>
+                {{#each burgers}}
+                    {{#if devoured}}
+                        {{> burgers/burger-devoured}}
                 {{/each}}
             </ul>
         </div>
