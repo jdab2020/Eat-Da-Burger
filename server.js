@@ -23,11 +23,13 @@ app.set("view engine", "handlebars");
 
 // Routes
 // =============================================================
-app.use("/",apiRoutes);
+// app.use("/",apiRoutes);
 // app.use("/",htmlRoutes);
 
 // const apiRoutes = require ("./routes/apiRoutes");
 // const htmlRoutes = require ("./routes/htmlRoutes");
+
+require("./routes/api-routes.js")(app);
 
 
 
