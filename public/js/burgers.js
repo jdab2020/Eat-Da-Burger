@@ -19,7 +19,7 @@ $(document).ready(function () {
             burger_name: $("input").val().trim(),
             devoured: $("[burger_name=devoured]:checked").val().trim()
         }
-        $.ajax({
+        $.ajax("/api/burgers", {
             type: "POST",
             data: newBurger
         }).then(()=>{location.reload();})
