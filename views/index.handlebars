@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 text-center">
             <h1>Let's Eat-Da-Burger!</h1>
             <p>Manage your burger cravings!</p>
         </div>
@@ -14,9 +14,9 @@
                 {{!-- {{> this.dataValues/burger-block devoured=true}} --}}
                 <li>
                     {{!-- <p><span class="label">ID:</span> {{this.dataValues.id}}</p> --}}
-                    <p><span class="label"></span> {{this.dataValues.burger_name}}</p>
-                    <button data-id="{{this.dataValues.id}}" class="devour"
-                        data-devoured="true">Devour!</button>
+                    <p><span class="label"></span> {{this.dataValues.burger_name}}
+                    <button data-id="{{this.dataValues.id}}" class="devour float-right"
+                        data-devoured="true">Devour!</button></p>
                 </li>
                 {{/unless}}
                 {{/each}}
