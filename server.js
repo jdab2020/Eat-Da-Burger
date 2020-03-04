@@ -1,7 +1,9 @@
 // *** Dependencies
 // =============================================================
+require('dotenv').config()
 const express = require("express");
 const db = require("./models");
+console.log(process.env)
 // require('dotenv').config();
 
 // Sets up the Express App
