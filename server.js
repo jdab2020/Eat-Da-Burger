@@ -2,6 +2,7 @@
 // =============================================================
 const express = require("express");
 const db = require("./models");
+// require('dotenv').config();
 
 // Sets up the Express App
 // =============================================================
