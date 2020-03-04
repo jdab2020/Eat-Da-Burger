@@ -17,13 +17,13 @@ module.exports =
       "operatorsAliases": false
     },
     "production": {
-      "username": "root",
-      "password": null,
-      "database": "database_production",
+      "username": process.env.JAWSDB_USER,
+      "password": process.env.JAWSDB_PASS,
+      "database": process.env.JAWSDB_DB,
       "host": "127.0.0.1",
       "dialect": "mysql",
       "operatorsAliases": false,
-      "use_env_variable": "JAWSDB_URL"
+      "use_env_variable": process.env.JAWSDB_URL
     }
   }
   
