@@ -23,7 +23,7 @@ module.exports =
       "host": "127.0.0.1",
       "dialect": "mysql",
       "operatorsAliases": false,
-      "use_env_variable": process.env.JAWSDB_URL
+      "use_env_variable": "JAWSDB_URL"
     }
   }
   
