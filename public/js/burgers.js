@@ -4,32 +4,33 @@ $(document).ready(function () {
     $(document).on("click","button.devour",devourBurger); // devour button handler
     
     function devourBurger (event) {
+        console.log(this)
         let id = $(this).data("id");
         let newState = $(this).data("devoured")
+        console.log(newState,"newstate")
 
         $.ajax("/api/burgers/" + id, {
-            type: "PUT",
-            data: newState
+            method: "PUT",
+            data: {devour: newState}
         }).then(() => {
-            // location.reload();
+            location.reload();
         })
     }
 
     function addBurger (event)  {
         let id = $(this).data("id");
         let input = $(".inputBurger")
-        console.log(input.val())
+        
         
         let newBurger = {
-            burger_name: $(".inputBurger").val().trim(),
-            devoured: $("[burger_name=devoured]:checked").val()
+            burger_name: input.val().trim(),
         }
-        console.log(newBurger)
+        // console.log(newBurger)
         $.ajax("/api/burgers", {
-            type: "POST",
+            method: "POST",
             data: newBurger
         }).then(()=>{
-            // location.reload();
+            location.reload();
         })
     }
 
