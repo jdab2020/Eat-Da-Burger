@@ -4,10 +4,8 @@ $(document).ready(function () {
     $(document).on("click","button.devour",devourBurger); // devour button handler
     
     function devourBurger (event) {
-        console.log(this)
         let id = $(this).data("id");
         let newState = $(this).data("devoured")
-        console.log(newState,"newstate")
 
         $.ajax("/api/burgers/" + id, {
             method: "PUT",
@@ -19,13 +17,8 @@ $(document).ready(function () {
 
     function addBurger (event)  {
         let id = $(this).data("id");
-        let input = $(".inputBurger")
-        
-        
-        let newBurger = {
-            burger_name: input.val().trim(),
-        }
-        // console.log(newBurger)
+        let input = $(".inputBurger")   
+        let newBurger = {burger_name: input.val().trim()}
         $.ajax("/api/burgers", {
             method: "POST",
             data: newBurger
